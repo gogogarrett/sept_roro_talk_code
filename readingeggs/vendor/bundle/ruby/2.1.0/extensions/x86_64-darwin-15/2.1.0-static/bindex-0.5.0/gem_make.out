@@ -1,0 +1,12 @@
+/Users/garrett/.rubies/ruby-2.1.2/bin/ruby extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20170826-65371-19z5hcv/bindex
+installing default cruby libraries

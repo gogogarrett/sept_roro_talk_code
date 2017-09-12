@@ -1,0 +1,19 @@
+<h1>Lesson: <%= @lesson_id %></h1>
+<h2>Activity: <%= @activity_id %></h2>
+
+<%= form_tag("/student_events") do %>
+  <%= hidden_field_tag 'student_event[activity_id]', @activity_id %>
+  <%= hidden_field_tag 'student_event[lesson_id]', @lesson_id %>
+  <%= hidden_field_tag 'student_event[event_type]', "CompleteActivity" %>
+  <%= hidden_field_tag 'student_event[product]', "readingeggs" %>
+  <div><%= submit_tag 'CompleteActivity' %></div>
+<% end %>
+
+<% if @activity_id >= 5 %>
+  <%= form_tag("/student_events") do %>
+    <%= hidden_field_tag 'student_event[lesson_id]', @lesson_id %>
+    <%= hidden_field_tag 'student_event[event_type]', "CompleteLesson" %>
+    <%= hidden_field_tag 'student_event[product]', "readingeggs" %>
+    <div><%= submit_tag 'CompleteLesson' %></div>
+  <% end %>
+<% end %>
